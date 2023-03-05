@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { Chessboard } from "./components/Chessboard";
 import "./App.css";
-const App = () => {
+const App: React.FC = () => {
   return (
     <Container>
       <Chessboard />
