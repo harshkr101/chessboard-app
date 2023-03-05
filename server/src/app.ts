@@ -47,12 +47,12 @@ function getKnightMoves(position: Position): Position[] {
   return validMoves;
 }
 
-app.post("/api/possible-moves", async (req: Request, res: Response) => {
+app.post("/api/possible-moves", (req: Request, res: Response) => {
   const position: Position = req.body;
-  console.log("Position", position);
-
+  if (position === undefined || position === null) {
+    res.send(400).end();
+  }
   const validMoves = getKnightMoves(position);
-
   res.status(200).json(validMoves);
 });
 
