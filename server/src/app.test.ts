@@ -20,7 +20,10 @@ describe("getKnightMoves", () => {
   });
 
   it("should return an empty array if there are no valid moves", () => {
-    const position = {};
+    const position = {
+      row: 20,
+      column: 20,
+    };
     const expectedMoves: [] = [];
 
     const actualMoves = getKnightMoves(position);
