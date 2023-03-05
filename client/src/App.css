@@ -1,23 +1,35 @@
+.main{
+  background-color: whitesmoke;
+}
+
+.info{
+  width:50%;
+  margin: auto;
+}
 .chessboard {
   display: flex;
   flex-wrap: wrap;
-  width: 748.5px;
+  width: 75%;
   height: fit-content;
   margin: 0 auto;
   border: 1px solid #333;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .square {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border: 1px solid #333;
   text-align: center;
-  font-size: 30px;
+  font-size: 39px;
   font-weight: bold;
-  padding: 2.11%;
+  padding: 3%;
+  transition: background-color 0.3s ease;
 }
 
 .white {
@@ -25,7 +37,7 @@
 }
 
 .dark {
-  background-color: #5C4033;
+  background-color: #5c4033;
   color: white;
 }
 
@@ -44,4 +56,40 @@
   font-size: 20px;
   font-weight: bold;
   text-align: center;
+}
+
+/* MoveList */
+.move-list {
+  border: 1px solid #333;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.move-list h4 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.move-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.move-list li {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.btn-wrapper, .current-position{
+  width: 50%;
+  margin: auto;
+  margin-top: 5%;
+  font-size: large;
 }
