@@ -1,33 +1,11 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import { Button } from "react-bootstrap";
 import { Position } from "../types";
 
 // Generate the list of possible moves
-export const MoveList: React.FC<{ knightPosition: Position }> = ({
-  knightPosition,
+export const MoveList: React.FC<{ knightMoves: Position[] }> = ({
+  knightMoves,
 }) => {
-  const [knightMoves, setKnightMoves] = useState<Position[]>([]);
-
-  const getMoves = useCallback(async () => {
-    console.log("position", knightPosition);
-    const response = await fetch("http://localhost:3001/api/possible-moves", {
-      method: "POST",
-      body: JSON.stringify(knightPosition),
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      console.log(data);
-      setKnightMoves(data);
-    } else {
-      console.error("Unable to fetch data");
-    }
-  }, [knightPosition]);
-
-  useEffect(() => {
-    getMoves();
-  }, [getMoves]);
-
   if (knightMoves.length > 0) {
     return (
       <div>
